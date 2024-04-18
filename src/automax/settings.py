@@ -120,7 +120,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Assuming your static files are located in the 'static' directory in the project root
+    BASE_DIR / 'main/static',  # Assuming your static files are located in the 'static' directory in the project root
 ]
 
 
