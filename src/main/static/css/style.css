@@ -1,0 +1,34 @@
+/* Reset default margins and paddings */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+/* Style for main content container */
+.index {
+    height: 100vh;
+    position: relative; /* Ensure relative positioning for absolute children */
+}
+
+/* Style for video container */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Style for video element */
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover; /* Ensure video covers entire container */
+}
