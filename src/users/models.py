@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User 
 from localflavor.us.models import USStateField, USZipCodeField
-# Create your models here.
-
 
 class Location(models.Model):
     address_1 = models.CharField(max_length=128, blank=True)
@@ -15,12 +13,11 @@ class Location(models.Model):
         return f'Location {self.id}'
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
     photo = models.ImageField(null=True, upload_to=None, height_field=None, width_field=None, max_length=None)
     bio = models.CharField(max_length=140, blank=True)
     phone_number = models.CharField(max_length=12, blank=True)
-    location = models.OneToOneField(
-        Location, on_delete=models.CASCADE, null=True)
+    location = models.OneToOneField(Location, on_delete=models.SET_NULL, null=True, related_name='profile')
 
     def __str__(self):
-        return f'{self.user.username}\'s Profile'
+        return f'Profile for {self.user.username}'
