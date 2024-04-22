@@ -1,14 +1,16 @@
 {% extends 'base/base.html '%}
 {% load static %}
 
-{% block 'body' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
  <div class = "text-center">
 
     <main class = "form-signin"> 
-        <form action="" method="post">
-            <img class= "mb-4" src={ % static 'images/logo.png ' %} alt="" width="75" height="75">
-            {{ login_form}}
-            <button class="w-80 btn btn-danger bg-black" type="submit" >Sign In</button>
+        <form action="" method="post" class="legend">
+            <img class= "mb-4" src="{% static 'images/logo.png' %}" alt="" width="75" height="75">
+            {{ login_form|crispy_forms_tags }}
+            <button class="w-80 btn btn-danger bg-dark" type="submit" >Sign In</button>
         <p class="mt-5 mb-3 text-muted">Copyright © {% now  'Y' %} Gmax </p>
         </form>
 
@@ -19,6 +21,6 @@
 
 
 
-{% block 'footer' %}
+{% block footer %}
 {% endblock %} 
 
