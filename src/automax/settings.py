@@ -116,7 +116,7 @@ LOGIN_URL = '/login/'
 
 #Message settings
 MESSAGE_TAG = {
-    messages.ERROR: 'danger'
+    messages.ERROR: 'Danger'
 }
 
 

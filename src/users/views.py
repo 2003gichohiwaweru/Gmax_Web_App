@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render 
 from django.http import HttpResponse
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 # Create your views here.
@@ -18,7 +18,7 @@ def login_view(request):
             print(user)
             if  user is not None:
                 login(request, user)
-                messages.success(request, 'You have succesfully logged in as {username}. ')
+                messages.success(request, f'You have succesfully logged in as {username}')
                 return redirect('home')
             else: 
                 messages.error(request, f'Unable to Log in')
@@ -32,4 +32,5 @@ def login_view(request):
 
 
 def register_view(request):
-    return render(request, 'views/register.html')
+    register_form = UserCreationForm()
+    return render(request, 'views/register.html', {'register_form': register_form})
