@@ -10,18 +10,23 @@
 {% block 'body' %}
 <div class="text-center">
     <main class="form-signin">
-        <form method="post" class="legend">
+        <form method="post" class="legend" action="">
+            
             <img class="mb-4" src="{% static 'images/logo.png' %}" alt="" width="75" height="75">
+            <h2> LOGIN PAGE</h2>
             {% crispy login_form %}
-            <button class="w-80 btn btn-danger bg-dark" type="submit">Sign In</button>
+            <button class="w-80 btn btn-danger bg-danger" type="submit">SIGNIN</button>
             <p class="mt-5 mb-3 text-muted">Copyright © {% now 'Y' %} Gmax </p>
         </form>
     </main>
 </div>
+
+
+
 <style>
     /* Style the form container */
     .form-signin {
-        max-width: 400px; /* Adjust max-width as needed */
+        max-width: 500px; /* Adjust max-width as needed */
         padding: 15px;
         margin: auto;
     }
@@ -36,6 +41,7 @@
     .btn {
         width: 100%; /* Make button full width */
         margin-top: 10px;
+        text-color: white;
     }
 </style>
 {% endblock %}
