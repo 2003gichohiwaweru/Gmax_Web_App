@@ -38,7 +38,7 @@ class RegisterView(View):
     
 
     def post(self, request):
-        register_form = UserCreationForm(request=request, data=request.POST)
+        register_form = UserCreationForm(data=request.POST)
         if register_form.is_valid():
             user = register_form.save()
             user.refresh_from_db()
