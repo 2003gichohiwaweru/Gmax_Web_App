@@ -9,10 +9,11 @@
     <main class="form-signin">
         <img class="mb-4" src="{% static 'images/logo.png' %}" alt="" width="75" height="75">
         <h2> LOGIN PAGE</h2>
-        <form method="post" class="legend" action="">
+        <form method="post" class="" action="">
             {% csrf_token %}
             {% crispy login_form %}
             <button class="w-80 btn btn-danger bg-danger" type="submit">LOGIN</button>
+            
             <p class="mt-5 mb-3 text-muted">Copyright © {% now 'Y' %} Gmax </p>
         </form>
     </main>
@@ -21,27 +22,13 @@
 
 
 <style>
-    /* Style the form container */
-    .form-signin {
-        max-width: 500px; /* Adjust max-width as needed */
-        padding: 15px;
-        margin: auto;
-    }
+    
 
-    /* Style the form fields */
-    .legend .form-control {
-        width: 100%; /* Make form fields fill the container */
-        margin-bottom: 10px;
-    }
 
-    /* Style the button */
-    .btn {
-        width: 100%; /* Make button full width */
-        margin-top: 10px;
-        text-color: white;
-    }
+   
 </style>
-
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 {% endblock %}
 
 {% block 'footer' %}
