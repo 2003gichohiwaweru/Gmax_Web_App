@@ -42,8 +42,7 @@ class RegisterView(View):
         if register_form.is_valid():
             user = register_form.save()
             user.refresh_from_db()
-            password = register_form.cleaned_data.get('password')
-            user = authenticate(username=user.username, password=password)
+           
             login(request, user)
             messages.success(
                 request, f'User {user.username} is registered succefully')
