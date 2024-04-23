@@ -1,7 +1,7 @@
-from django.shortcuts import render 
+from django.shortcuts import redirect, render 
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, login
 # Create your views here.
 #Th login view 
 
@@ -16,11 +16,10 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             print(user)
             if  user is not None:
-                pass
-
-            
+                login(request, user)
+                return 
             else: 
-                login_form.add_error(None, "Invalid username or password")
+                pass
     elif request.method == 'GET':
         login_form =AuthenticationForm()
     

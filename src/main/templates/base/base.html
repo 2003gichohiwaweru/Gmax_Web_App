@@ -10,14 +10,20 @@
     <meta="description" content="the best Experience">
     <meta name="author" content="Yusufu, yose">
     
+    {% block 'title'%}
 
     <title>GMAX</title>
+
+    {% endblock%}
 
     <!--Boostarp link-->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
     <!-- Link Custom CSS -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    
+    <link href="{% static 'js/bootstrap.min.js' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -27,6 +33,8 @@
     
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 
     {% block 'footer' %}
     <footer class="footer text-muted white-50  bg-dark py-5">
