@@ -10,12 +10,12 @@
 {% block 'body' %}
 <div class="text-center">
     <main class="form-signin">
-        <form method="post" class="legend" action="">
-            
-            <img class="mb-4" src="{% static 'images/logo.png' %}" alt="" width="75" height="75">
-            <h2> LOGIN PAGE</h2>
+        <img class="mb-4" src="{% static 'images/logo.png' %}" alt="" width="75" height="75">
+        <h2> LOGIN PAGE</h2>
+        <form method="post" class="legend" action="onSubmit">
+            {% csrf_token %}
             {% crispy login_form %}
-            <button class="w-80 btn btn-danger bg-danger" type="submit">SIGNIN</button>
+            <button class="w-80 btn btn-danger bg-danger" type="Submit">SIGNIN</button>
             <p class="mt-5 mb-3 text-muted">Copyright © {% now 'Y' %} Gmax </p>
         </form>
     </main>
