@@ -10,6 +10,19 @@
 {% endblock%}
 
 {% block 'body' %}
-<main>
+
+    <main class="flex-grow-1 d-flex justify-content-center align-items-center">
+        <div class="w-90 text-center">
+           
+             <h2>Find the deal near you!! !</h2>
+            <p class="lead text-black">Looking to buy or sell used car? We've got <br>you 
+                covered.</br>GMAX is the leading used  car marketplace you have to be in
+            </p>
+                
+            <p class= "lead">
+                <a href="{% url 'register'%}" 
+                class=" btn btn-lg btn-secondary fw-bold border-white bg-black">Register</a>
+            </p>
+        </div>
 </main>
 {% endblock %}

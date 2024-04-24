@@ -14,6 +14,10 @@
             {% csrf_token %}
             {{ register_form|crispy }}
             <button class="w-80 btn btn-lg bg-danger" type="submit">Register</button>
+            <div class="mb-4 ">
+                <p>Already have an Account?<a href="{% url 'login'%}">Login</a></p>
+            </div>
+            
             
             <p class="mt-5 mb-3 text-muted">Copyright © {% now 'Y' %} Gmax </p>
         </form>
