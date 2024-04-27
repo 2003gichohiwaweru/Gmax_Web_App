@@ -31,21 +31,21 @@
                 
             <p class= "lead">
                 <a href="{% url 'register'%}" 
-                class=" btn btn-lg btn-outline-success fw-bold border-white ">Register</a>
+                class=" btn btn-lg btn-success fw-bold border-white ">Register</a>
             </p>
         </div>
     </main>
-    <div>
-        <!-- Footer section -->
-        <footer class="text-center text-white-50 bg-dark py-4">
-            <p>Copyright © {% now 'Y' %} <a href="#" class="text-white">GMAX</a> by <a href="#" class="text-white">Joseph Gichohi</a></p>
-        </footer>
-    </div>
+    
 
     
 </div>
 
 {% endblock %}
 {% block 'footer'%}
-
+<div>
+    <!-- Footer section -->
+    <footer class="text-center text-white-50  py-3">
+        <p>Copyright © {% now 'Y' %} <a href="#" class="text-white">GMAX</a> by <a href="#" class="text-white">Joseph Gichohi</a></p>
+    </footer>
+</div>
 {% endblock %}

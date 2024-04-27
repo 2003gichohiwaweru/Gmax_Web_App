@@ -11,15 +11,37 @@
 
 {% block 'body' %}
 
-    <main class="flex-grow-1 d-flex justify-content-center align-items-center">
-        <div class="w-90 text-center">
-           
-             <h2>Find the deal near you!! !</h2>
-            <p class="lead text-black">Looking to buy or sell used car? We've got <br>you 
-                covered.</br>GMAX is the leading used  car marketplace you have to be in
-            </p>
-                
-            
+  
+{% endblock %}
+{% block 'footer' %}
+<div class="container bg-dark py-4 mt-5">
+    <div class="row">
+        <!-- First Column: Logo and Name -->
+        <div class="col-md-4 text-center">
+            <img class="mb-2" src="{% static 'images/logo.png' %}" width="32" height="32" alt="Logo">
+            <p class="text-white">Your Company Name</p>
         </div>
-</main>
+        
+        <!-- Second Column: Navigation Links -->
+        <div class="col-md-4">
+            <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Home</a></li>
+                <li><a href="#" class="text-white">Pricing</a></li>
+                <li><a href="#" class="text-white">Contacts</a></li>
+                <li><a href="#" class="text-white">Brands</a></li>
+            </ul>
+        </div>
+        
+        <!-- Third Column: Social Media Icons and Email Link -->
+        <div class="col-md-4 text-center">
+            <p class="text-white">Connect with us:</p>
+            <!-- Social Media Icons -->
+            <a href="#" class="text-white me-3" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-3" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white me-3" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <!-- Email Link -->
+            <a href="mailto:example@example.com" class="text-white"><i class="fas fa-envelope"></i> example@example.com</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
