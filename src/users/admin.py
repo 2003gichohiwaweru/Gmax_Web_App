@@ -6,8 +6,7 @@ class ProfileAdmin(admin.ModelAdmin):
     search_fields = ['user__username', 'bio', 'phone_number']
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ['address_1', 'city', 'state', 'zip_code']
-    search_fields = ['address_1', 'city', 'state', 'zip_code']
+   pass
 
 admin.site.register(Profile, ProfileAdmin)
 admin.site.register(Location, LocationAdmin)
