@@ -11,7 +11,41 @@
 
 {% block 'body' %}
 
-  
+  <main>
+    <section class=" py-3 container px-4"> 
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">GMAX</h1>
+                <p class="text-muted lead">The best place to buy and sell
+                    second hand cars. Gmax made it that easy
+                </p>
+                <a href="" class="btn btn-success my-2">Lis your Car</a>
+            </div>
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <!--My car filtering options-->
+            </div>
+           
+        <div>
+
+    </section>
+    <div class="album py-2 ">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for listing in listings %}
+                <div class="col">
+                    {% include 'components/car_listing_card.html' %}
+                </div>
+                
+                
+                
+                {% endfor%}
+
+            </div>
+
+        </div>
+
+    </div>
+  </main>
 {% endblock %}
 {% block 'footer' %}
 <div class="container bg-dark py-4 mt-5">

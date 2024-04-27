@@ -2,8 +2,7 @@ from django.contrib import admin
 from .models import Profile, Location
 
 class ProfileAdmin(admin.ModelAdmin):
-    list_display = ['user', 'bio', 'phone_number']
-    search_fields = ['user__username', 'bio', 'phone_number']
+   pass
 
 class LocationAdmin(admin.ModelAdmin):
    pass
