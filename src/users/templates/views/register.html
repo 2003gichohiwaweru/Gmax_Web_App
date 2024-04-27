@@ -6,34 +6,26 @@
 
 
 {% block 'body' %}
-<div class="text-center">
-    <main class="form-signin">
-        <img class="mb-4" src="{% static 'images/logo2.png' %}" alt="" width="75" height="75">
-        <h2> REGISTER PAGE</h2>
-        <form method="post" class="" action="">
-            {% csrf_token %}
-            {{ register_form|crispy }}
-            <button class="w-80 btn btn-lg btn-outline-success" type="submit">Register</button>
-            <div class="mb-4 ">
-                <p>Already have an Account?<a href="{% url 'login'%}">Login</a></p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <img class="mb-2 mx-auto d-block" src="{% static 'images/logo2.png' %}" alt="Gmax logo" width="75" height="75">
+                    <h2 class="text-center"> REGISTRATION PAGE</h2>
+                    <form method="post" class="form-signin" action="">
+                        {% csrf_token %}
+                        {{ register_form|crispy}}
+                        <button class="w-80 btn btn-lg btn-success mt-3" type="submit">Register</button>
+                        <div class="mt-4 text-center">
+                            <p>Already Have an Account?<a href="{% url 'login'%}">Login</a></p>
+                        </div>
+                    </form>
+                </div>
             </div>
-            
-            
-            <p class="mt-5 mb-3 text-muted">Copyright © {% now 'Y' %} Gmax </p>
-        </form>
-    </main>
+        </div>
+    </div>
 </div>
-
-
-
-<style>
-    
-
-
-   
-</style>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 {% endblock %}
 
 {% block 'footer' %}
