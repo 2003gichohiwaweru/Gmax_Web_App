@@ -19,13 +19,13 @@ The power of django form+ Django filters is such a great experience
 
 Installation
 Clone the repository:
-bash
+bsh
 Copy code
-git clone https://github.com/2003gichohiwaweru/gmax-car-listing.git
+git clone https://github.com/2003gichohiwaweru/Gmax_Web_App
 Navigate to the project directory:
 bash
 Copy code
-cd gmax-car-listing
+cd Gmax_Web_App
 Install dependencies:
 Copy code
 pip install -r requirements.txt
