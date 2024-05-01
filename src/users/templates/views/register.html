@@ -16,7 +16,7 @@
                     <form method="post" class="form-signin" action="">
                         {% csrf_token %}
                         {{ register_form|crispy}}
-                        <button class="w-80 btn btn-lg btn-success mt-3" type="submit">Register</button>
+                        <button class="w-80 btn btn-lg btn-outline-danger mt-3" type="submit">Register</button>
                         <div class="mt-4 text-center">
                             <p>Already Have an Account?<a href="{% url 'login'%}">Login</a></p>
                         </div>
