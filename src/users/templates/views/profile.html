@@ -6,13 +6,22 @@
 {% block 'body'%}
 <div class="container-fluid text-center py-5">
     <div class="container px-4" id="hanging-icons">
-        <div class="row">
+        <div class="row g-4">
             <div class=" col d-flex align-items-start">
                 <div>
-                    <h2 class="mb-3 border-bottom" style="color: red">Profile</h2>
+                    <h2 class="mb-3 border-bottom fw-bold" style="color: red">Profile</h2>
                 </div>
             </div>
         </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-6">
+                    
+                </div>
+            </div>
+        </form>
+
     </div>
 </div>
 {% endblock %}
