@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 
 
@@ -13,7 +14,7 @@
 
   <main>
     <section class=" py-3 container px-4"> 
-        <div class="row py-lg-5">
+        <div class="row py-lg-5 ">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light">GMAX</h1>
                 <p class="text-muted lead">The best place to buy and sell
@@ -22,7 +23,11 @@
                 <a href="{% url "list" %}" class="btn btn-outline-danger my-2">List your Car</a>
             </div>
             <div class="col-lg-6 col-md-8 mx-auto">
-                <!--My car filtering options-->
+                <form method="get" > 
+                    {{ listing_filter.form|crispy}}
+                    <button class="btn btn-outline-danger mt-3 " type ="submit">Submit</button>
+
+                </form>
             </div>
            
         <div>
@@ -31,7 +36,7 @@
     <div class="album py-2 ">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {% for listing in listings %}
+                {% for listing in listing_filter.qs %}
                 <div class="col">
                     {% include 'components/car_listing_card.html' %}
                 </div>

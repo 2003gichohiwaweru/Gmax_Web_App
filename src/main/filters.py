@@ -5,4 +5,4 @@ class ListingFilter(django_filters.FilterSet):
 
     class Meta:
         model = Listing
-        fields = {'brands': {'exact'}, }
+        fields = {'brands': {'exact'}, 'transmission': {'exact'}, 'mileage': {'lt'}, }

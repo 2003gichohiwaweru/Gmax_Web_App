@@ -15,6 +15,7 @@ Django: The web framework used for backend development.
 HTML/CSS/JavaScript: Frontend development technologies for creating the user interface and interactivity.
 SQLite: The default database system used by Django for data storage.
 Bootstrap: Frontend framework for building responsive and mobile-first websites.
+The power of django form+ Django filters is such a great experience
 
 Installation
 Clone the repository:
