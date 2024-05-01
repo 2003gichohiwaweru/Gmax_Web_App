@@ -56,3 +56,8 @@ class RegisterView(View):
         else:
             messages.error(request, f'An error occured trying while trying to register in')
             return render(request, 'views/register.html', {'register_form': register_form})
+        
+class ProfileView(View):
+
+    def get(self, request):
+        return render(request, 'views/profile.html', {})
