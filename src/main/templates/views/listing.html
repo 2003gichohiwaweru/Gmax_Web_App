@@ -9,6 +9,78 @@
 
 {% block 'body'%}
 <main>
+    <section class="container col-xxl-8 px-4 py-5">
+        <div class="row flex-lg-lg-row-reverse align-items-center g-5 py-5">
+            <div class="col-6">
+                <h1 class="display-5 fw-bold lh-2 mb-3">{{ listing.model}}</h1>
+                <p class="lead">{{ listing.seller.user.username}}</p>
+            </div>
+            <div class=" col-10 col-sm-8 col-lg-6">
+                <img src="{{listing.image.url}}" class="d-block mx-lg-auto img-fluid" width ="1920" height="1080"
+                     loading="lazy"/>
+
+            </div>
+
+        </div>
+
+    </section>
+    <div class="bg-light">
+        <div class="container px-3 py-5">
+            <h2 class="mb-3 border-bottom" style="color: red">CAR INFORMATION</h2>
+            <div class="row row-cols-1 row-cols-md-4 mb-3 text-center ">
+                <div class="col-lg-8">
+                    <div class="table-responsive">
+                        <table class="table text-center">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" class="text text-start mx-5">Brand</th>
+                                    <td>{{ listing.brands|capfirst}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text text-start">Vin</th>
+                                    <td>{{ listing.vin|capfirst}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text text-start">Mileage</th>
+                                    <td>{{ listing.mileage}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text text-start">Color</th>
+                                    <td>{{ listing.color|capfirst}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text text-start">Transmission</th>
+                                    <td>{{ listing.transmission|capfirst}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row" class="text text-start">Engine</th>
+                                    <td>{{ listing.engine|capfirst}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card mb-4 rounded-3 shadow-sm">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal">Location</h4>
+
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>{{listing.location.city}}<li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </main>
 {% endblock %}
