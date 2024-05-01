@@ -13,7 +13,7 @@
         <div class="row flex-lg-lg-row-reverse align-items-center g-5 py-5">
             <div class="col-6">
                 <h1 class="display-5 fw-bold lh-2 mb-3">{{ listing.model}}</h1>
-                <p class="lead">{{ listing.seller.user.username}}</p>
+                <p class="lead">{{ listing.seller.user.username}} - {{listing.updated_at}}</p>
             </div>
             <div class=" col-10 col-sm-8 col-lg-6">
                 <img src="{{listing.image.url}}" class="d-block mx-lg-auto img-fluid" width ="1920" height="1080"
@@ -85,6 +85,23 @@
 
             </div>
 
+
+        </div>
+       
+
+       
+        <div class="container py-4 px-4">
+            <div class="g-4 py-4 row">
+                <div class="col d-flex align-items-start">
+                    <div>
+                        <h2 class="border-bottom mb-3" style="color: red">Description<h2>
+                            <p>{{ listing.description}}</p>
+                    </div>
+                </div>
+
+                </div>
+
+            </div>
         </div>
 
     </div>
