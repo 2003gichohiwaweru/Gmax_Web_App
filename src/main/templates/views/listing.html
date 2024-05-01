@@ -24,6 +24,7 @@
         </div>
 
     </section>
+    <!--Stylin for the table part under the car information-->
     <div class="bg-light">
         <div class="container px-3 py-5">
             <h2 class="mb-3 border-bottom" style="color: red">CAR INFORMATION</h2>
@@ -60,6 +61,7 @@
                         </table>
                     </div>
                 </div>
+                <!--Stling for the Location part-->
                 <div class="col-lg-4">
                     <div class="card mb-4 rounded-3 shadow-sm">
                         <div class="card-header py-3">
@@ -71,6 +73,10 @@
                                 <li>{{listing.location.city}}, {{listing.location.state}},
                                     {{listing.location.zip_code}}<li>
                             </ul>
+                            <button class="btn btn-lg w-100 btn-success my-3">
+                                {{listing.seller.phone_number}}</button>
+                            <button class="btn btn-lg w-100 btn-success my-3">
+                                Send Email</button>
                         </div>
 
                     </div>
