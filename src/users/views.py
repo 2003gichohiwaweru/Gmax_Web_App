@@ -6,6 +6,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.views import View
+from main.models import Listing
 # Create your views here.
 #Th login view 
 from .forms import LocationForm, ProfileForm, UserForm
@@ -62,8 +63,29 @@ class RegisterView(View):
 class ProfileView(View):
 
     def get(self, request):
-        user_form = UserForm()
-        profile_form = ProfileForm()
-        location_form = LocationForm()
+        users_listing = Listing.objects.filter(seller =request.user.profile)
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.profile)
+        location_form = LocationForm(instance=request.user.profile.location)
         return render(request, 'views/profile.html', {'user_form': user_form, 'profile_form': profile_form,
-                                                      'location_form': location_form})
+                                                      'location_form': location_form, 'user_listing': users_listing, })
+    
+
+    def post(self, request):
+        users_listing = Listing.objects.filter(seller =request.user.profile)
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        location_form = LocationForm(request.POST, instance=request.user.profile.location)
+
+        if user_form.is_valid() and location_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            location_form.save()
+            messages.success(request, f'Profile Updated Successfuly')
+
+        else: 
+            messages.error(request, 'Error occured while Updating Profile')
+
+        return render(request, 'views/profile.html', {'user_form': user_form, 'profile_form': profile_form,
+                                                      'location_form': location_form, 'users_listing': users_listing})
+    
