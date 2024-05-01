@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.views import View
 # Create your views here.
 #Th login view 
-
+from .forms import LocationForm, ProfileForm, UserForm
 
 def login_view(request):
     if request.method == 'POST':
@@ -62,4 +62,8 @@ class RegisterView(View):
 class ProfileView(View):
 
     def get(self, request):
-        return render(request, 'views/profile.html', {})
+        user_form = UserForm()
+        profile_form = ProfileForm()
+        location_form = LocationForm()
+        return render(request, 'views/profile.html', {'user_form': user_form, 'profile_form': profile_form,
+                                                      'location_form': location_form})
