@@ -20,7 +20,7 @@ Installation
 Clone the repository:
 bash
 Copy code
-git clone https://github.com/yourusername/gmax-car-listing.git
+git clone https://github.com/2003gichohiwaweru/gmax-car-listing.git
 Navigate to the project directory:
 bash
 Copy code
