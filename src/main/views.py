@@ -74,7 +74,20 @@ def edit_view(request, id):
         if listing is None:
             raise Exception
         if request.method == 'POST':
-            pass
+            listing_form = ListingForm(
+                request.POST, instance=listing
+            )
+            location_form = LocationForm(
+                request.POST, instance=listing.location
+            )
+            if location_form.is_valid and listing_form.is_valid:
+                listing_form.save()
+                location_form.save()
+                messages.info(request, f'listing {id} updated successfuly! ')
+                return redirect('home')
+            else:
+                raise Exception()
+            
         else:
             listing_form = ListingForm(instance=listing)
             location_form = LocationForm(instance=listing.location)
