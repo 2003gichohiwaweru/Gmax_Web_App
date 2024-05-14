@@ -83,7 +83,8 @@ def edit_view(request, id):
             if location_form.is_valid and listing_form.is_valid:
                 listing_form.save()
                 location_form.save()
-                messages.info(request, f'listing {id} updated successfuly! ')
+                listing_username = request.user.username
+                messages.info(request, f'{listing_username}\'s Listing updated successfuly! ')
                 return redirect('home')
             else:
                 raise Exception()
