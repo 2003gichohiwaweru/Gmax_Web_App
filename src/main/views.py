@@ -76,9 +76,13 @@ def edit_view(request, id):
         if request.method == 'POST':
             pass
         else:
-            pass
-        print(id)
-        return render(request, 'views/edit.html', {})
+            listing_form = ListingForm(instance=listing)
+            location_form = LocationForm(instance=listing.location)
+        context = {
+            'location_form': location_form,
+            'listing_form': listing_form
+        }
+        return render(request, 'views/edit.html', context)
     except Exception as e:
         messages.error(
             request, f'An error occured while trying to edit the listing. ')
