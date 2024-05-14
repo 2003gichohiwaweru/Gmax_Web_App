@@ -66,3 +66,21 @@ def listing_view(request, id):
         messages.error(request, f'Invalid id {id}was provided. ')
         return redirect('home')
     
+
+@login_required
+def edit_view(request, id):
+    try:
+        listing = Listing.objects.get(id=id)
+        if listing is None:
+            raise Exception
+        if request.method == 'POST':
+            pass
+        else:
+            pass
+        print(id)
+        return render(request, 'views/edit.html', {})
+    except Exception as e:
+        messages.error(
+            request, f'An error occured while trying to edit the listing. ')
+        return redirect('home')
+    
