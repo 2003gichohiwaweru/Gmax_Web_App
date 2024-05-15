@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from localflavor.us.models import USStateField, USZipCodeField
 
 from .models import Location, Profile
+from .widgets import CustomPictureImageFieldWidget
 
 
 
@@ -15,6 +16,7 @@ class UserForm(forms.ModelForm):
 
 
 class ProfileForm(forms.ModelForm):
+    photo = forms.ImageField(widget=CustomPictureImageFieldWidget)
 
     class Meta: 
         model = Profile
