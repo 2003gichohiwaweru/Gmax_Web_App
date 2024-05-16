@@ -17,6 +17,7 @@ class UserForm(forms.ModelForm):
 
 class ProfileForm(forms.ModelForm):
     photo = forms.ImageField(widget=CustomPictureImageFieldWidget)
+    bio = forms.TextInput()
 
     class Meta: 
         model = Profile
