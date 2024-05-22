@@ -49,5 +49,25 @@
             </tbody>
         </table>
     </div>
+    <div class=" container px-4">
+        <div class=" row g-4 py-5">
+            <div class="col d-flex align-items-start">
+                <div>
+                    <h2 class="mb-3 border-bottom" style="color: red">Liked Listing</h2>
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <tbody>
+                {% for liked_listing in user_liked_listing %}
+                <tr>
+                    <td>{{ liked_listing.id}}</td>
+                    <td>{{ liked_listing.model}}</td>
+                    <td>{{ liked_listing.like_date}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </div>
 {% endblock %}
