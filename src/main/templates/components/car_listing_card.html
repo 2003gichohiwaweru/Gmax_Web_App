@@ -28,8 +28,11 @@
                 {% endif %}
             </div>
             <small class="text-muted">{{ listing.updated_at}}</small>
-            <button id = "like_{{listing.id}}"value="like" class="btn btn-outline-primary btn-sm" type="button">
-                :)
+            <button id = "like_{{listing.id}}"value="like" class="btn btn-sm" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                  </svg>
             </button>
 
         </div>
@@ -37,7 +40,16 @@
 
 </div>
 <script>
-    $("#like_{{listing.id}}").click(function () ) {
-        console.log("{{listing.id}}");
-    }
+    $("#like_{{listing.id}}").click(function ()  {
+        $.ajax({
+            type: "POST",
+            url: "{% url 'like_listing' id=listing.id %}",
+            data: { 'csrfmiddlewaretoken': '{{csrf_token}}' },
+            datatype: "json",
+            success: function(r) {
+                $("#like_{{listing.id}}").find('svg')
+            },
+            error: function(rs, e) {}
+        });
+    })
 </script>
