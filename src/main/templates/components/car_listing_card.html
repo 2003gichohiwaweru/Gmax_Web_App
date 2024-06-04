@@ -28,7 +28,7 @@
                 {% endif %}
             </div>
             <small class="text-muted">{{ listing.updated_at}}</small>
-            <button value="like" class="btn btn-outline-primary btn-sm" type="button">
+            <button id = "like_{{listing.id}}"value="like" class="btn btn-outline-primary btn-sm" type="button">
                 :)
             </button>
 
@@ -36,3 +36,8 @@
     </div>
 
 </div>
+<script>
+    $("#like_{{listing.id}}").click(function () ) {
+        console.log("{{listing.id}}");
+    }
+</script>
