@@ -43,11 +43,12 @@
     $("#like_{{listing.id}}").click(function ()  {
         $.ajax({
             type: "POST",
+            
             url: "{% url 'like_listing' id=listing.id %}",
             data: { 'csrfmiddlewaretoken': '{{csrf_token}}' },
             datatype: "json",
             success: function(r) {
-                $("#like_{{listing.id}}").find('svg')
+                alert()
             },
             error: function(rs, e) {}
         });
