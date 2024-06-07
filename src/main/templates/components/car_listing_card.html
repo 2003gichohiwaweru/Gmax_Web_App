@@ -29,10 +29,18 @@
             </div>
             <small class="text-muted">{{ listing.updated_at}}</small>
             <button id = "like_{{listing.id}}"value="like" class="btn btn-sm" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                {% if listing.id in liked_listing_ids %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" class="bi bi-heart" 
                 class="bi bi-heart-fill" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
-                  </svg>
+                </svg>
+
+                {% else %}
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="green" class="bi bi-heart"  
+                class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+                </svg>
+                {% endif %}
             </button>
 
         </div>
