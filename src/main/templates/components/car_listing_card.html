@@ -48,9 +48,11 @@
             data: { 'csrfmiddlewaretoken': '{{csrf_token}}' },
             datatype: "json",
             success: function(r) {
-                alert()
+                $("#like_{{listing.id}}").find("svg").attr("fill", r.is_liked_by_user ? "red": "black");
             },
-            error: function(rs, e) {}
+            error: function(rs, e) {
+                alert(e);
+            }
         });
     })
 </script>
