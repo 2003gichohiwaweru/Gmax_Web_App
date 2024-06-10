@@ -11,9 +11,15 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import os
+import environ
 from pathlib import Path
 from django.contrib.messages import constants as messages
 
+
+#INITIALIZE THE INSTANCE OF THE ENVIRON
+
+env = environ.Env()
+env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
