@@ -41,3 +41,65 @@ As a seller, you can sign up for an account, list your cars for sale, and manage
 As a buyer, you can browse through the listings, search for cars based on your preferences, and contact sellers for more information.
 Contributing
 Contributions are welcome! If you'd like to contribute to the development of GMax Car Listing Website, please fork the repository, make your changes, and submit a pull request.
+
+
+
+
+
+
+1. Navigate to Your Project Directory
+Open a terminal or command prompt and move to your project folder:
+
+bash
+Copy
+Edit
+cd /path/to/your/project
+2. Activate the Virtual Environment (if applicable)
+If you're using a virtual environment, activate it:
+
+Windows (CMD/PowerShell):
+
+bash
+Copy
+Edit
+venv\Scripts\activate
+macOS/Linux:
+
+bash
+Copy
+Edit
+source venv/bin/activate
+3. Run Migrations (if needed)
+Ensure your database is up to date:
+
+bash
+Copy
+Edit
+python manage.py makemigrations
+python manage.py migrate
+4. Create a Superuser (if not already created)
+If you need an admin user, create one:
+
+bash
+Copy
+Edit
+python manage.py createsuperuser
+Follow the prompts to set up a username and password.
+
+5. Run the Development Server
+Start the Django development server:
+
+bash
+Copy
+Edit
+python manage.py runserver
+By default, this runs on http://127.0.0.1:8000/. If you want to use a different port (e.g., 8080):
+
+bash
+Copy
+Edit
+python manage.py runserver 8080
+6. Access Your Project
+Open your browser and go to http://127.0.0.1:8000/ to see your project.
+
+If you need to access the admin panel, go to http://127.0.0.1:8000/admin/ and log in with the superuser credentials.
